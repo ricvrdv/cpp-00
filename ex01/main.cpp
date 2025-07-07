@@ -24,8 +24,8 @@ int	main()
 		std::getline(std::cin, command);
 		if (std::cin.eof())
 		{
-			std::cout << "EOF reached (Ctrl+D pressed)\n";
-			break ;
+			std::cout << "Input aborted. EOF received.\n";
+			break;
 		}
 		else if (std::cin.fail())
 		{

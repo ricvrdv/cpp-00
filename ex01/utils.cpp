@@ -17,3 +17,13 @@ void	handle_signal(void)
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
 }
+
+bool	is_digits_only(const std::string &str)
+{
+	for (size_t i = 0; i < str.length(); i ++)
+	{
+		if (!std::isdigit(str[i]))
+			return (false);
+	}
+	return (true);
+}

@@ -14,7 +14,9 @@
 # define UTILS_HPP
 
 # include <csignal>
+# include "PhoneBook.hpp"
 
 void	handle_signal(void);
+bool	is_digits_only(const std::string &str);
 
 #endif
