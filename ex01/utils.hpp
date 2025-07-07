@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 18:36:27 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/04 18:59:50 by rjesus-d         ###   ########.fr       */
+/*   Created: 2025/07/07 16:04:43 by rjesus-d          #+#    #+#             */
+/*   Updated: 2025/07/07 16:06:39 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-# include <iostream>
-# include "Contact.hpp"
-# include "utils.hpp"
+# include <csignal>
 
-class PhoneBook
-{
-	private:
-		Contact contacts[8];
-		int	contact_count;
-	public:
-		PhoneBook(void);
-		void	add_contact();
-		void	search_contacts();
-		void	display_contact(int index);
-};
+void	handle_signal(void);
 
 #endif

@@ -51,7 +51,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)Compilation Successful: megaphone created$(RESET)"
+	@echo "$(GREEN)Compilation Successful: $(NAME) created$(RESET)"
 
 clean:
 	@if ls $(OBJ) 1> /dev/null 2>&1; then \
