@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: applecore <applecore@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 15:35:22 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/04 19:04:20 by rjesus-d         ###   ########.fr        #
+#    Updated: 2025/07/08 23:34:47 by applecore        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@
 
 NAME = phonebook
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -rf
 
@@ -26,9 +26,9 @@ RM = rm -rf
 # SOURCE FILES                                                                 #
 #==============================================================================#
 
-SRC =	main.cpp Contact.cpp PhoneBook.cpp utils.cpp
+SRCS =	main.cpp Contact.cpp PhoneBook.cpp utils.cpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 #==============================================================================#
 # COLORS                                                                       #
@@ -46,17 +46,17 @@ RESET = \033[0m
 
 all: $(NAME)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) $(OBJ) -c $< -o $@
-
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 	@echo "$(GREEN)Compilation Successful: $(NAME) created$(RESET)"
 
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 clean:
-	@if ls $(OBJ) 1> /dev/null 2>&1; then \
-		$(RM) $(OBJ); \
-		echo "$(GREEN)Intermediate object files removed:$(RESET)\n$(OBJ)"; \
+	@if ls $(OBJS) 1> /dev/null 2>&1; then \
+		$(RM) $(OBJS); \
+		echo "$(GREEN)Intermediate object files removed:$(RESET)\n$(OBJS)"; \
 	else \
 		echo "$(RED)No object files to remove.$(RESET)"; \
 	fi
