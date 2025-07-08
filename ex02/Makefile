@@ -3,35 +3,35 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: applecore <applecore@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 15:22:47 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/08 18:34:51 by rjesus-d         ###   ########.fr        #
+#    Updated: 2025/07/08 23:52:27 by applecore        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = account
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 RM = rm -rf
 
-SRC = Account.cpp tests.cpp
+SRCS = Account.cpp tests.cpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJS = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) $(OBJ) -c $< -o $@
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+%.o: %.cpp
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
