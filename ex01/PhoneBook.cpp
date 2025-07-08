@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:26:05 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/08 15:26:07 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/07/08 22:50:09 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void	PhoneBook::display_contact(int index)
 	std::cout << "/-------------------------------------------\\" << std::endl;
 	std::cout << "| Contact found:                            |" << std::endl;
 	std::cout << "\\-------------------------------------------/" << std::endl;
-	std::cout << "First Name: " << c.get_first_name() << std::endl;
-	std::cout << "Last Name: " << c.get_last_name() << std::endl;
+	std::cout << "First name: " << c.get_first_name() << std::endl;
+	std::cout << "Last name: " << c.get_last_name() << std::endl;
 	std::cout << "Nickname: " << c.get_nickname() << std::endl;
 	std::cout << "Phone number: " << c.get_phone_number() << std::endl;
 	std::cout << "Darkest secret: " << c.get_darkest_secret() << std::endl;
