@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: applecore <applecore@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 15:35:22 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/04 17:19:12 by rjesus-d         ###   ########.fr        #
+#    Updated: 2025/07/08 23:44:23 by applecore        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@
 
 NAME = megaphone
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -rf
 
@@ -46,12 +46,12 @@ RESET = \033[0m
 
 all: $(NAME)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) $(OBJ) -c $< -o $@
-
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo "$(GREEN)Compilation Successful: $(NAME) created$(RESET)"
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@if ls $(OBJ) 1> /dev/null 2>&1; then \
