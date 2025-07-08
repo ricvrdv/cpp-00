@@ -6,7 +6,7 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:06:16 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/07 23:26:52 by applecore        ###   ########.fr       */
+/*   Updated: 2025/07/08 14:29:48 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main()
 
 	handle_signal();
 	std::cout << CLEAR;
+	intro_display();
 	while (true)
 	{
 		std::cout << BOLD << "Enter command (ADD, SEARCH, EXIT): " << RESET;
@@ -26,7 +27,7 @@ int	main()
 		if (std::cin.eof())
 		{
 			std::cout << RED << "Input aborted. EOF received" << RESET << std::endl;
-			break;
+			break ;
 		}
 		else if (std::cin.fail())
 		{
@@ -39,9 +40,10 @@ int	main()
 		else if (command == "SEARCH")
 			book.search_contacts();
 		else if (command == "EXIT")
-			break;
+			break ;
 		else
 			std::cout << RED << "Invalid input" << RESET << std::endl;
 	}
+	std::cout << YELLOW <<"\n\tSee you next time" << RESET << std::endl << std::endl;
 	return (0);
 }

@@ -61,5 +61,16 @@ std::string	format_data(std::string str)
 		return (str.substr(0, 9) + '.');
 	formatted << std::right << std::setfill(' ') << std::setw(10) << str;
 	return (formatted.str());
-	
+}
+
+void	intro_display(void)
+{
+	std::cout << "/===========================================\\" << std::endl;
+	std::cout << "|                PHONEBOOK                  |" << std::endl;
+	std::cout << "|===========================================|" << std::endl;
+	std::cout << "|  ADD    - to add contact                  |" << std::endl;
+	std::cout << "|  SEARCH - to search contact               |" << std::endl;
+	std::cout << "|  EXIT   - to quit                         |" << std::endl;
+	std::cout << "\\===========================================/" << std::endl;
+	std::cout << std::endl;
 }

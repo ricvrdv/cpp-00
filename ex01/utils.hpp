@@ -22,5 +22,6 @@ void        handle_signal(void);
 bool        is_digits_only(const std::string &str);
 std::string	handle_input(const std::string &prompt);
 std::string format_data(std::string str);
+void        intro_display(void);
 
 #endif

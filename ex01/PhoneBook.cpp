@@ -47,11 +47,12 @@ void	PhoneBook::search_contacts()
 		std::cout << "|            No contacts found!             |" << std::endl;
 		std::cout << "|                                           |" << std::endl;
 		std::cout << "\\-------------------------------------------/" << std::endl;
+		std::cout << std::endl;
 		return ;
 	}
-	std::cout << "/----------|----------|----------|----------\\" << std::endl;
+	std::cout << "/-------------------------------------------\\" << std::endl;
 	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
+	std::cout << "|----------+----------+----------+----------|" << std::endl;
 	for (size_t i = 0; i < 8; i++)
 	{
 		std::cout << "|" << std::setw(10) << i
@@ -60,7 +61,7 @@ void	PhoneBook::search_contacts()
 			<< "|" << format_data(contacts[i].get_nickname())
 			<< "|" << std::endl;
 	}
-	std::cout << "\\----------|----------|----------|----------/" << std::endl;
+	std::cout << "\\-------------------------------------------/" << std::endl;
 	while (true)
 	{
 		input = handle_input("Choose index of the entry to display: ");
@@ -81,6 +82,7 @@ void	PhoneBook::display_contact(int index)
 {
 	Contact &c = contacts[index];
 
+	std::cout << std::endl;
 	std::cout << "/-------------------------------------------\\" << std::endl;
 	std::cout << "| Contact found:                            |" << std::endl;
 	std::cout << "\\-------------------------------------------/" << std::endl;
@@ -90,4 +92,5 @@ void	PhoneBook::display_contact(int index)
 	std::cout << "Phone number: " << c.get_phone_number() << std::endl;
 	std::cout << "Darkest secret: " << c.get_darkest_secret() << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << std::endl;
 }
