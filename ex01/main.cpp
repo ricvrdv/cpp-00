@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:06:16 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/04 19:23:11 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/07/07 23:26:52 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@ int	main()
 	std::string	command;
 
 	handle_signal();
+	std::cout << CLEAR;
 	while (true)
 	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+		std::cout << BOLD << "Enter command (ADD, SEARCH, EXIT): " << RESET;
 		std::getline(std::cin, command);
 		if (std::cin.eof())
 		{
-			std::cout << "Input aborted. EOF received.\n";
+			std::cout << RED << "Input aborted. EOF received" << RESET << std::endl;
 			break;
 		}
 		else if (std::cin.fail())
 		{
-			std::cout << "Invalid input\n";
+			std::cout << RED << "Invalid input" << RESET << std::endl;
 			std::cin.clear();
 			continue ;
 		}
@@ -40,7 +41,7 @@ int	main()
 		else if (command == "EXIT")
 			break;
 		else
-			std::cout << "Invalid input\n";
+			std::cout << RED << "Invalid input" << RESET << std::endl;
 	}
 	return (0);
 }

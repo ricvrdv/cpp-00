@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:36:27 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/04 18:59:50 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/07/08 00:36:41 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 # include <iostream>
 # include <sstream>
+# include <iomanip>
 # include "Contact.hpp"
 # include "utils.hpp"
+# include "colors.hpp"
 
 class PhoneBook
 {

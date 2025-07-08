@@ -3,41 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:19:30 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/07 15:27:06 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/07/08 01:31:30 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : contact_count(0) {}
-
-static std::string	handle_input(const std::string &prompt)
-{
-	std::string	input;
-	while (true)
-	{
-		std::cout << prompt;
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-		{
-			std::cout << "Input aborted. EOF received.\n";
-			std::cin.clear();
-			exit(EXIT_FAILURE);
-		}
-		else if (std::cin.fail())
-		{
-			std::cout << "Input failed. Please try again.\n";
-			std::cin.clear();
-			continue;
-		}
-		else if (!input.empty())
-			return (input);
-		std::cout << "Field cannot be empty.\n";
-	}
-}
 
 void	PhoneBook::add_contact()
 {
@@ -51,12 +26,13 @@ void	PhoneBook::add_contact()
 	{
 		phone_nr = handle_input("Phone number: ");
 		if (!is_digits_only(phone_nr))
-			std::cout << "Phone number must contain digits only.\n";
+			std::cout << RED << "Phone number must contain digits only." << RESET << std::endl;
 	} while (!is_digits_only(phone_nr));
 	new_contact.set_phone_number(phone_nr);
 	new_contact.set_darkest_secret(handle_input("Darkest secret: "));
 	contacts[contact_count % 8] = new_contact;
 	contact_count++;
+	std::cout << GREEN << "\n\tContact added\n" << RESET << std::endl;
 }
 
 void	PhoneBook::search_contacts()
@@ -64,18 +40,54 @@ void	PhoneBook::search_contacts()
 	std::string	input;
 	int			index = 0;
 
-	input = handle_input("Index of the contact: ");
-	std::stringstream(input) >> index;
-	display_contact(index);
+	if (contacts[0].get_first_name().length() == 0)
+	{
+		std::cout << "/-------------------------------------------\\" << std::endl;
+		std::cout << "|                                           |" << std::endl;
+		std::cout << "|            No contacts found!             |" << std::endl;
+		std::cout << "|                                           |" << std::endl;
+		std::cout << "\\-------------------------------------------/" << std::endl;
+		return ;
+	}
+	std::cout << "/----------|----------|----------|----------\\" << std::endl;
+	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
+	std::cout << "|----------|----------|----------|----------|" << std::endl;
+	for (size_t i = 0; i < 8; i++)
+	{
+		std::cout << "|" << std::setw(10) << i
+			<< "|" << format_data(contacts[i].get_first_name())
+			<< "|" << format_data(contacts[i].get_last_name())
+			<< "|" << format_data(contacts[i].get_nickname())
+			<< "|" << std::endl;
+	}
+	std::cout << "\\----------|----------|----------|----------/" << std::endl;
+	while (true)
+	{
+		input = handle_input("Choose index of the entry to display: ");
+		if (is_digits_only(input))
+		{
+			std::stringstream(input) >> index;
+			if (index >= 0 && index < 8)
+			{
+				display_contact(index);
+				break ;
+			}
+		}
+		std::cout << RED <<"Invalid index, choose between 0 and 7" << RESET << std::endl;
+	}
 }
 
 void	PhoneBook::display_contact(int index)
 {
 	Contact &c = contacts[index];
 
+	std::cout << "/-------------------------------------------\\" << std::endl;
+	std::cout << "| Contact found:                            |" << std::endl;
+	std::cout << "\\-------------------------------------------/" << std::endl;
 	std::cout << "First Name: " << c.get_first_name() << std::endl;
 	std::cout << "Last Name: " << c.get_last_name() << std::endl;
 	std::cout << "Nickname: " << c.get_nickname() << std::endl;
 	std::cout << "Phone number: " << c.get_phone_number() << std::endl;
 	std::cout << "Darkest secret: " << c.get_darkest_secret() << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
