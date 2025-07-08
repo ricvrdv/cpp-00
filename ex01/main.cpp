@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 19:06:16 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/08 14:29:48 by rjesus-d         ###   ########.fr       */
+/*   Created: 2025/07/08 15:25:42 by rjesus-d          #+#    #+#             */
+/*   Updated: 2025/07/08 15:25:44 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main()
 		if (std::cin.eof())
 		{
 			std::cout << RED << "Input aborted. EOF received" << RESET << std::endl;
-			break ;
+			return (1);
 		}
 		else if (std::cin.fail())
 		{
