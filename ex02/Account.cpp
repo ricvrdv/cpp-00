@@ -74,7 +74,7 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::_displayTimestamp( void )
 {
-    std::time_t now = std::time(nullptr);
+    std::time_t now = std::time(NULL);
     std::tm     *lt = std::localtime(&now);
 
     std::cout << '[' << (lt->tm_year + 1900)

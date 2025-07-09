@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: applecore <applecore@student.42.fr>        +#+  +:+       +#+         #
+#    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/08 15:22:47 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/08 23:52:27 by applecore        ###   ########.fr        #
+#    Created: 2025/07/09 17:14:32 by rjesus-d          #+#    #+#              #
+#    Updated: 2025/07/09 17:14:34 by rjesus-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -rf
 
 SRCS = Account.cpp tests.cpp
 
-OBJS = $(SRC:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
