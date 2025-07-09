@@ -20,6 +20,9 @@ int		Account::_totalAmount = 0;
 int		Account::_totalNbDeposits = 0;
 int		Account::_totalNbWithdrawals = 0;
 
+// CONSTRUCTORS
+
+Account::Account( void ) {}
 
 Account::Account( int initial_deposit ) :
 	_accountIndex(_nbAccounts),
@@ -35,7 +38,7 @@ Account::Account( int initial_deposit ) :
 		<< ";created" << std::endl;
 }
 
-Account::Account( void ) {}
+// GETTERS (STATIC MEMBER FUNCTIONS)
 
 int		Account::getNbAccounts( void )
 {
@@ -56,6 +59,8 @@ int		Account::getNbWithdrawals( void )
 {
     return (_totalNbWithdrawals);
 }
+
+// OTHER MEMBER FUNCTIONS
 
 void	Account::displayAccountsInfos( void )
 {
@@ -107,7 +112,12 @@ void	Account::displayStatus( void ) const
 		<< std::endl;
 }
 
+// DESTRUCTOR
+
 Account::~Account( void )
 {
-
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex
+		<< ";amount:" << _amount
+		<< ";closed" << std::endl;
 }
