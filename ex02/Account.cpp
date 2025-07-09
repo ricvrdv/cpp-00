@@ -6,7 +6,7 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:23:41 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/09 00:37:26 by applecore        ###   ########.fr       */
+/*   Updated: 2025/07/09 00:51:14 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit )
 {
+	_displayTimestamp();
 
 }
 
@@ -70,7 +71,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 int		Account::checkAmount( void ) const
 {
-
+	return (_amount);
 }
 
 void	Account::displayStatus( void ) const
