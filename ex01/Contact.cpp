@@ -14,54 +14,54 @@
 
 // SETTERS:
 
-void	Contact::set_first_name(const std::string &str)
+void	Contact::setFirstName(const std::string &str)
 {
-	first_name = str;
+	_firstName = str;
 }
 
-void	Contact::set_last_name(const std::string &str)
+void	Contact::setLastName(const std::string &str)
 {
-	last_name = str;
+	_lastName = str;
 }
 
-void	Contact::set_nickname(const std::string &str)
+void	Contact::setNickname(const std::string &str)
 {
-	nickname = str;
+	_nickname = str;
 }
 
-void	Contact::set_phone_number(const std::string &str)
+void	Contact::setPhoneNumber(const std::string &str)
 {
-	phone_number = str;
+	_phoneNumber = str;
 }
 
-void	Contact::set_darkest_secret(const std::string &str)
+void	Contact::setDarkestSecret(const std::string &str)
 {
-	darkest_secret = str;
+	_darkestSecret = str;
 }
 
 // GETTERS:
 
-std::string	Contact::get_first_name()
+std::string	Contact::getFirstName()
 {
-	return (first_name);
+	return (_firstName);
 }
 
-std::string	Contact::get_last_name()
+std::string	Contact::getLastName()
 {
-	return (last_name);
+	return (_lastName);
 }
 
-std::string	Contact::get_nickname()
+std::string	Contact::getNickname()
 {
-	return (nickname);
+	return (_nickname);
 }
 
-std::string	Contact::get_phone_number()
+std::string	Contact::getPhoneNumber()
 {
-	return (phone_number);
+	return (_phoneNumber);
 }
 
-std::string	Contact::get_darkest_secret()
+std::string	Contact::getDarkestSecret()
 {
-	return (darkest_secret);
+	return (_darkestSecret);
 }

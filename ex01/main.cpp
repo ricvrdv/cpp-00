@@ -36,9 +36,9 @@ int	main()
 			continue ;
 		}
 		else if (command == "ADD")
-			book.add_contact();
+			book.addContact();
 		else if (command == "SEARCH")
-			book.search_contacts();
+			book.searchContacts();
 		else if (command == "EXIT")
 			break ;
 		else

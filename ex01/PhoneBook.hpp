@@ -24,13 +24,13 @@
 class PhoneBook
 {
 	private:
-		Contact contacts[8];
-		int	contact_count;
+		Contact _contacts[8];
+		int		_contact_count;
 	public:
 		PhoneBook(void);
-		void	add_contact();
-		void	search_contacts();
-		void	display_contact(int index);
+		void	addContact();
+		void	searchContacts();
+		void	displayContact(int index);
 };
 
 #endif

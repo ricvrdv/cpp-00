@@ -12,35 +12,35 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : contact_count(0) {}
+PhoneBook::PhoneBook() : _contact_count(0) {}
 
-void	PhoneBook::add_contact()
+void	PhoneBook::addContact()
 {
     Contact     new_contact;
 	std::string	phone_nr;
 
-	new_contact.set_first_name(handle_input("First name: "));
-	new_contact.set_last_name(handle_input("Last name: "));
-	new_contact.set_nickname(handle_input("Nickname: "));
+	new_contact.setFirstName(handle_input("First name: "));
+	new_contact.setLastName(handle_input("Last name: "));
+	new_contact.setNickname(handle_input("Nickname: "));
 	do
 	{
 		phone_nr = handle_input("Phone number: ");
 		if (!is_digits_only(phone_nr))
 			std::cout << RED << "Phone number must contain digits only." << RESET << std::endl;
 	} while (!is_digits_only(phone_nr));
-	new_contact.set_phone_number(phone_nr);
-	new_contact.set_darkest_secret(handle_input("Darkest secret: "));
-	contacts[contact_count % 8] = new_contact;
-	contact_count++;
+	new_contact.setPhoneNumber(phone_nr);
+	new_contact.setDarkestSecret(handle_input("Darkest secret: "));
+	_contacts[_contact_count % 8] = new_contact;
+	_contact_count++;
 	std::cout << GREEN << "\n\tContact added\n" << RESET << std::endl;
 }
 
-void	PhoneBook::search_contacts()
+void	PhoneBook::searchContacts()
 {
 	std::string	input;
 	int			index = 0;
 
-	if (contacts[0].get_first_name().length() == 0)
+	if (_contacts[0].getFirstName().length() == 0)
 	{
 		std::cout << "/-------------------------------------------\\" << std::endl;
 		std::cout << "|                                           |" << std::endl;
@@ -56,9 +56,9 @@ void	PhoneBook::search_contacts()
 	for (size_t i = 0; i < 8; i++)
 	{
 		std::cout << "|" << std::setw(10) << i
-			<< "|" << format_data(contacts[i].get_first_name())
-			<< "|" << format_data(contacts[i].get_last_name())
-			<< "|" << format_data(contacts[i].get_nickname())
+			<< "|" << format_data(_contacts[i].getFirstName())
+			<< "|" << format_data(_contacts[i].getLastName())
+			<< "|" << format_data(_contacts[i].getNickname())
 			<< "|" << std::endl;
 	}
 	std::cout << "\\-------------------------------------------/" << std::endl;
@@ -70,7 +70,7 @@ void	PhoneBook::search_contacts()
 			std::stringstream(input) >> index;
 			if (index >= 0 && index < 8)
 			{
-				display_contact(index);
+				displayContact(index);
 				break ;
 			}
 		}
@@ -78,19 +78,19 @@ void	PhoneBook::search_contacts()
 	}
 }
 
-void	PhoneBook::display_contact(int index)
+void	PhoneBook::displayContact(int index)
 {
-	Contact &c = contacts[index];
+	Contact &c = _contacts[index];
 
 	std::cout << std::endl;
 	std::cout << "/-------------------------------------------\\" << std::endl;
 	std::cout << "| Contact found:                            |" << std::endl;
 	std::cout << "\\-------------------------------------------/" << std::endl;
-	std::cout << "First name: " << c.get_first_name() << std::endl;
-	std::cout << "Last name: " << c.get_last_name() << std::endl;
-	std::cout << "Nickname: " << c.get_nickname() << std::endl;
-	std::cout << "Phone number: " << c.get_phone_number() << std::endl;
-	std::cout << "Darkest secret: " << c.get_darkest_secret() << std::endl;
+	std::cout << "First name: " << c.getFirstName() << std::endl;
+	std::cout << "Last name: " << c.getLastName() << std::endl;
+	std::cout << "Nickname: " << c.getNickname() << std::endl;
+	std::cout << "Phone number: " << c.getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << c.getDarkestSecret() << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << std::endl;
 }
