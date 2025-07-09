@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 15:23:41 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/07/09 00:51:14 by applecore        ###   ########.fr       */
+/*   Created: 2025/07/09 15:05:30 by rjesus-d          #+#    #+#             */
+/*   Updated: 2025/07/09 15:05:34 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::_displayTimestamp( void )
 {
-
+    
 }
 
 void	Account::makeDeposit( int deposit )

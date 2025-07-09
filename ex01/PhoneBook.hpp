@@ -16,6 +16,7 @@
 # include <iostream>
 # include <sstream>
 # include <iomanip>
+# include <cstdlib>
 # include "Contact.hpp"
 # include "utils.hpp"
 # include "colors.hpp"
