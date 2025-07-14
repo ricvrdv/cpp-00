@@ -1,5 +1,5 @@
 # C++ Module 00
-## Concepts:
+# Concepts:
 - namespaces
 - `Class` and instance
 - `this->` pointer
