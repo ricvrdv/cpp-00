@@ -8,3 +8,7 @@
 - encapsulation
 - initialization lists
 - `static` and `const` keywords
+
+-----
+
+Check out [C++ Module 01](https://github.com/ricvrdv/cpp-01)
