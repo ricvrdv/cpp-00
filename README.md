@@ -39,7 +39,7 @@ make
 
 # ex02
 
-Reconstructed a missing Account.cpp implementation from its header and a log file to match expected output, practicing reverse engineering, class design, and static member usage.
+Reconstructed a missing `Account.cpp` implementation from its header and a log file to match expected output, practicing reverse engineering, class design, and static member usage.
 
 Usage:
 ```
